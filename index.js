@@ -17,6 +17,18 @@ const server = express();
 server.use(express.json());
 server.use(helmet());
 
+
+//helper functions~~~~~~
+//SELECT * from zoos
+function findZoos(){
+  return db('zoos')
+}
+
+//select * from zoos where id = id
+function findById(id){
+  return db('zoos').where({ id })
+}
+
 // endpoints here
 
 const port = 3300;
